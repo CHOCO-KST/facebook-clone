@@ -1,0 +1,1341 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --primary: #2d88ff;
+  --dark: #18191a;
+  --semi_dark: #242526;
+  --soft_dark: #3a3b3c;
+  --soft_dark_hover: #494a4b;
+  --danger: #e41e3f;
+  --success: #45bd62;
+  --wanning: #f7b828;
+  --active: #31a24c;
+  --text: #c5c7cb;
+  --text-tin: #b0b3b8;
+  --border-radius: 0.4em;
+  --box-shadow: 0 2px 2px rgba(10, 10, 10, 0.705);
+  --post-margin-top: 1em;
+}
+
+body {
+  background-color: var(--dark);
+  position: relative;
+}
+
+.nav_bar {
+  width: 100%;
+  background-color: var(--semi_dark);
+  height: 3.4em;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* --------------------------------------------------- */
+
+/* This is the left side of navagition bar */
+
+.nav_left {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+  padding: 0 5px;
+  margin-left: 10px;
+}
+
+#fb_icon {
+  width: 2.5em;
+  height: 2.5em;
+  color: var(--primary);
+  background-color: var(--text);
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.search_box {
+  background-color: var(--soft_dark);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 2.5em;
+  margin: 0 5px;
+  border-radius: 50px;
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+#search_icon {
+  width: 1.3em;
+  height: 1.3em;
+}
+
+#search_icon path {
+  fill: var(--text);
+}
+
+#search_input {
+  background-color: var(--soft_dark);
+  color: var(--text);
+  height: 100%;
+  border: none;
+  font-size: 0.9em;
+}
+
+#search_input:focus {
+  outline: none;
+}
+
+/* ------------------------------------------------ */
+
+/* This is the center menu of the nevagition bar */
+
+.nav_center {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 8%;
+}
+
+.menu_bar {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.menu_bar:hover {
+  background-color: var(--soft_dark);
+  border-radius: 10px;
+}
+
+.menu_bar .span_icon {
+  width: 2em;
+  height: 2em;
+}
+
+.menu_bar .span_icon path {
+  fill: var(--text);
+}
+
+.noti {
+  background-color: var(--danger);
+  color: var(--text);
+  position: absolute;
+  transform: translate(25px, -15px);
+  padding: 0 5px;
+  border-radius: 25px;
+  font-size: 0.8em;
+}
+
+.nav_center .active {
+  border-bottom: 4px solid var(--primary);
+  margin-bottom: -5px;
+}
+.menu_bar .active_icon path {
+  fill: var(--primary);
+}
+
+/* --------------------------------------------------------------- */
+
+/* This is the right menu of the nevagition bar */
+
+.nav_right {
+  margin-right: 10px;
+  width: 25%;
+  padding-left: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.right_div:hover {
+  background-color: var(--soft_dark);
+}
+
+.profile_info {
+  margin: 0.8em 0.1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.profile_info span {
+  color: var(--text);
+  font-size: 0.9em;
+}
+
+.profile_info img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.icon_info {
+  width: 2.5em;
+  height: 2.5em;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--soft_dark);
+}
+
+.icon_info .span_icon {
+  font-size: 1.2em;
+}
+
+.icon_info .span_icon path,
+.icon_info .span_icon circle {
+  fill: var(--text);
+}
+
+.icon_info:hover {
+  background-color: var(--soft_dark_hover);
+}
+
+/* --------------------------------------------------------------- */
+
+.main_body {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding-top: 5em;
+}
+
+/* --------------------------------------------------------------- */
+
+/* .navigation section */
+.navigation {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.navigation::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* top path of navigation setting */
+
+.nav-setting-tiems {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.nav-setting-item {
+  height: 3.2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: var(--border-radius);
+}
+
+.nav-setting-item:hover {
+  background-color: var(--semi_dark);
+}
+
+.setting-icon {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.setting-img {
+  width: 2em;
+  height: 2em;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.setting-span {
+  width: 80%;
+}
+
+.setting-span .item-name {
+  color: var(--text);
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.noti-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.noti-div .circle-blue {
+  width: 0.5em;
+  height: 0.5em;
+  background: var(--primary);
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.noti-div .item-noti {
+  color: var(--primary);
+  font-size: 0.8em;
+}
+
+.setting-arrow-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--semi_dark);
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 50%;
+}
+
+.nevigation-down-arrow {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.nevigation-down-arrow path {
+  fill: var(--text);
+}
+
+/* bottom path of navigation setting */
+
+.your-shortcuts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+/* the shortcuts title */
+
+.your-shortcuts-div {
+  padding-top: 0.5em;
+  height: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  border-top: 1px solid var(--text);
+}
+
+.the-title {
+  width: 85%;
+  height: 100%;
+  margin-left: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.the-title span {
+  color: var(--text);
+}
+
+.edit {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+}
+
+.edit span {
+  line-height: 2em;
+  color: var(--primary);
+}
+
+.edit:hover {
+  background-color: var(--semi_dark);
+}
+
+/* group-shortcuts */
+
+.group-shortcut {
+  height: 3.2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: var(--border-radius);
+}
+
+.group-shortcut:hover {
+  background-color: var(--semi_dark);
+}
+
+.group-photo-div {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-img {
+  width: 2.2em;
+  height: 2.2em;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.group-name-div {
+  width: 80%;
+}
+
+.group-name-span {
+  color: var(--text);
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+/* --------------------------------------------------------------- */
+/* this is main div */
+.main {
+  flex: 2;
+  margin: 0 2em;
+  padding: 0 2.5em;
+  overflow: scroll;
+}
+
+.main::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* this is story path */
+.story-list {
+  height: 16em;
+  margin: 0 -1em;
+  padding: 0.5em 0 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+/*each story container */
+.story-div {
+  height: 100%;
+  width: 18.5%;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.fill-black-color {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0));
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.story-img {
+  background-color: #18191a;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+/* to create story -------------------------------*/
+
+.story-div .bottom-path {
+  height: 25%;
+  width: 100%;
+  background-color: var(--semi_dark);
+  text-align: center;
+}
+
+.story-plus-buttom {
+  font-size: 1.5em;
+  background: var(--primary);
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  border-radius: 50%;
+  line-height: 40px;
+  margin-top: -20px;
+  border: 4px solid var(--semi_dark);
+}
+
+.plus-icon path {
+  fill: var(--text);
+}
+
+.story-span {
+  font-weight: bold;
+  color: var(--text);
+  font-size: 0.9em;
+}
+
+/* story of ther guys */
+.profile-photo {
+  position: absolute;
+  width: 2.3em;
+  height: 2.3em;
+  border-radius: 50%;
+  background-size: contain;
+  border: 2.5px solid var(--primary);
+  top: 6px;
+  left: 6px;
+  z-index: 1;
+}
+
+.acc_name {
+  position: absolute;
+  bottom: 10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.9em;
+  width: 90%;
+}
+
+/* Story Arrow */
+.story-arrow {
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: var(--semi_dark);
+  top: 4.4em;
+  right: -0.5em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+.story-arrow:hover {
+  background-color: var(--soft_dark);
+}
+
+/* To create New Post ------------------------- */
+
+.create-new-post {
+  background-color: var(--semi_dark);
+  height: 7em;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+/* top path of new post */
+
+.text-post-div {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px 10px;
+}
+
+.post-profile {
+  height: 2.6em;
+  width: 2.6em;
+  border-radius: 50%;
+  background-size: cover;
+  border: 1px solid black;
+}
+
+.create-post {
+  width: 90%;
+  height: 2.5em;
+  background-color: var(--soft_dark);
+  border-radius: 50px;
+}
+
+.create-post span {
+  line-height: 2.5em;
+  margin: 0 20px;
+  color: var(--text);
+  font-size: 0.9em;
+}
+
+/* bottom path of new post */
+
+.media-post-div {
+  flex: 1.1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 2px solid var(--soft_dark);
+}
+
+.media-post-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+
+.media-post-icon:hover {
+  background-color: var(--soft_dark);
+}
+
+.post-svg {
+  width: 1.3em;
+  height: 1.3em;
+  margin-right: 5px;
+}
+
+.live-video-icon path {
+  fill: var(--danger);
+}
+
+.cho-photo-icon path {
+  fill: var(--success);
+}
+
+.feeling-icon path {
+  fill: var(--wanning);
+}
+
+.post-span {
+  color: var(--text);
+  margin-left: 5px;
+  font-size: 0.9em;
+}
+
+/* this is the third path to create room  --------- */
+
+.create-room {
+  height: 4em;
+  background-color: var(--semi_dark);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-top: var(--post-margin-top);
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+/* this is the create room path icon */
+
+.create-room-div {
+  width: 25%;
+  height: 4em;
+  padding: 15px 10px;
+  margin-left: 10px;
+}
+
+.room-icon-div {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--primary);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.room-icon-div:hover {
+  background-color: var(--soft_dark);
+}
+
+.video-plus-svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.room-span {
+  color: var(--primary);
+  font-size: 0.8em;
+}
+
+/* this path is friends list */
+
+.room-friend-list-div {
+  width: 75%;
+  height: 4em;
+  padding: 10px;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.friends-icon {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.messenger-chat-icon {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background-size: cover;
+  position: relative;
+}
+
+.active-status-green {
+  position: absolute;
+  background-color: var(--active);
+  border: 1px solid black;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  transform: translate(0, 0);
+  bottom: 0;
+  right: 0;
+}
+
+/* the right arrow in room */
+
+.room-right-arrow {
+  width: 2.5em;
+  height: 2.5em;
+  position: absolute;
+  background-color: var(--soft_dark);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0.6em;
+  right: 1em;
+}
+
+.room-right-arrow:hover {
+  background-color: var(--soft_dark_hover);
+}
+
+.right-arrow-svg {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.right-arrow-svg path {
+  fill: var(--text);
+}
+
+/* --------------------------------------------------------------- */
+
+/* compelementary section */
+.compelementary {
+  flex: 1;
+  overflow-y: scroll;
+  padding: 0 1em;
+}
+
+.compelementary::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* this is the friend request option path --------------------------- */
+
+.friend-request-space {
+  width: 100%;
+  height: 12em;
+  padding: 1em 0;
+}
+
+.friend-request-div {
+  width: 100%;
+  height: 100%;
+  background-color: var(--semi_dark);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+/* this is the top path of request option */
+
+.friend-nev-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  margin: 0.3em;
+  margin-bottom: -0.5em;
+}
+
+.friend-nev-icon {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.friend-nev-img {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.friend-nev-span {
+  flex: 4;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.friend-nev-option {
+  flex: 1;
+}
+
+.friend-nev-span-div {
+  width: 2em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.friend-nev-svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.friend-nev-svg {
+  fill: var(--text);
+}
+
+/* this is the bottom path of request option */
+
+.friend-detils {
+  flex: 5;
+  display: flex;
+  flex-direction: row;
+  margin: 0.3em;
+  margin-bottom: 0.7em;
+  padding: 0.3em 0.3em 0.8em;
+  border-radius: var(--border-radius);
+}
+
+.friend-detils:hover {
+  background-color: var(--soft_dark_hover);
+}
+
+.friend-req-photo {
+  flex: 1;
+}
+
+.friend-req-img {
+  width: 3.8em;
+  height: 3.8em;
+  background-size: cover;
+  border-radius: 50%;
+  float: right;
+}
+
+.friend-req-option {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+  margin: 0 10px;
+}
+
+.friend-req-name {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1em;
+}
+
+.friend-req-name .name {
+  font-size: 1em;
+}
+
+.friend-req-name .req-time {
+  font-size: 0.7em;
+}
+
+.friend-req-detils {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.mutual-friend {
+  flex: 1;
+}
+
+.mutual-friend-img {
+  width: 1.2em;
+  height: 1.2em;
+  background-size: cover;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.mutual-friend-span {
+  flex: 6;
+  font-size: 0.8em;
+}
+
+.friend-comfrim-option {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  color: var(--text);
+}
+
+.friend-option {
+  flex: 1;
+}
+
+.friend-button {
+  width: 95%;
+  height: 75%;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: var(--text);
+  border: none;
+  margin-top: 1em;
+  border-radius: var(--border-radius);
+}
+
+#friend-button-comfrim {
+  background-color: var(--primary);
+}
+
+#frined-button-delete {
+  background-color: var(--soft_dark);
+}
+
+/* this is the contacts chat list path ------------------------------ */
+
+.chat-list {
+  border-top: 1px solid var(--text);
+  padding-top: 0.9em;
+}
+
+.chat-list-nav {
+  height: 2em;
+  display: flex;
+  flex-direction: row;
+}
+
+.chat-nav-span {
+  flex: 4;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+}
+
+.chat-nav-div {
+  flex: 1;
+}
+
+.chat-icon {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-icon:hover {
+  background-color: var(--soft_dark);
+}
+
+.chat-list-nav path {
+  fill: var(--text);
+}
+
+/* this is the messenger chat content friend list */
+
+.messenger-friend {
+  height: 2.4em;
+  display: flex;
+  flex-direction: row;
+  border-radius: var(--border-radius);
+  margin-top: 0.4em;
+}
+
+.messenger-friend:hover {
+  background-color: var(--semi_dark);
+}
+
+.friend-profile-div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.friend-img {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.friend-name {
+  flex: 6;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.chat-active {
+  width: 0.6em;
+  height: 0.6em;
+  transform: translate(-3px, -3px);
+}
+
+.story-active {
+  border: 2.5px solid var(--primary);
+}
+
+/* this is the messenger group list */
+
+.group-list-nav {
+  margin-top: 1em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  border-top: 1px solid var(--text);
+}
+
+.messenger-group {
+  height: 2.4em;
+  display: flex;
+  flex-direction: row;
+  border-radius: var(--border-radius);
+  margin-top: 0.4em;
+}
+
+.messenger-group:hover {
+  background-color: var(--semi_dark);
+}
+
+.group-plus-div,
+.group-profile-div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.group-img {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.group-name,
+.create-group-span {
+  flex: 6;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.group-plus-icon {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background-color: var(--semi_dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-plus-svg {
+  width: 1em;
+  height: 1em;
+}
+
+.group-plus-svg path {
+  fill: var(--text);
+}
+
+/* ----------------------------------------------------------------------- */
+
+/* post path--------------------------------------------- */
+
+.post {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  background-color: var(--semi_dark);
+  margin-top: 1em;
+}
+
+/* this is the first section of post  */
+
+.post-header {
+  height: 3.5em;
+  display: flex;
+  flex-direction: row;
+  padding-top: 0.5em;
+}
+
+.poster-profile {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.poster-img {
+  width: 2.5em;
+  height: 2.5em;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.poster-detils {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-detil {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.poster-name {
+  color: var(--text);
+  font-size: 0.9em;
+}
+
+.post-time {
+  font-size: 0.7em;
+  color: var(--text-tin);
+}
+
+.post-time span {
+  margin-right: 5px;
+}
+
+.post-time path {
+  fill: var(--text-tin);
+}
+
+.post-option {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-option-svg path {
+  fill: var(--text-tin);
+}
+
+.post-option-svg {
+  font-size: 1.3em;
+}
+
+.post-option-icon {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-option-icon:hover {
+  background-color: var(--soft_dark);
+}
+
+/* this is the second section of post  */
+
+.post-body {
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
+}
+
+.post-caption {
+  margin: 0.8em 1em;
+}
+
+.post-translation {
+  height: 1em;
+  color: var(--text-tin);
+  font-size: 0.9em;
+  margin: 0.5em 0;
+}
+
+.post-translation span:hover {
+  text-decoration: underline;
+}
+
+.img-div {
+  width: 100%;
+}
+
+/* this is one image class */
+
+.one-img-div {
+  height: 40em;
+}
+
+.post-img {
+  border: 1px solid var(--dark);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* this is two image class */
+
+.two-img-div {
+  height: 40em;
+  display: flex;
+  flex-direction: row;
+}
+
+.two-img-div .post-img {
+  flex: 1;
+}
+
+/* this is three or more image class */
+/* but in multi we need to add new class in first img-div's class */
+
+.three-img-div,
+.multi-img-div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* in multi image need to add the first img-div's class this */
+.in-multi-img {
+  flex: 2 !important;
+}
+
+.more-img-div {
+  position: relative;
+}
+
+.more-img-div .gray-filter-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(75, 75, 75, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: var(--text);
+  font-weight: bold;
+}
+
+/* this is the last section of post  */
+
+.post-footer {
+  margin: 0.5em 1em;
+  display: flex;
+  height: 4em;
+  flex-direction: column;
+}
+
+/* this is the top path of footer */
+
+.post-footer-top {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post-footer-left {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  color: var(--text-tin);
+}
+
+.top-emoji {
+  width: 1em;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.post-footer-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-footer-right a {
+  color: var(--text-tin);
+  font-size: 0.8em;
+  text-decoration: none;
+  margin-left: 0.8em;
+}
+
+.post-footer-right a span {
+  margin-left: 0.4em;
+}
+
+.post-footer-right a:hover {
+  text-decoration: underline;
+}
+
+/* this is the bottom path of footer */
+
+.post-footer-bottom {
+  flex: 1;
+  border-top: 1px solid var(--text-tin);
+  display: flex;
+  flex-direction: row;
+  padding-top: 0.5em;
+  color: var(--text);
+}
+
+.reaction-div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reaction-icon {
+  margin-right: 0.3em;
+  font-size: 1.3em;
+}
+
+.reaction-icon path {
+  fill: var(--text);
+}
