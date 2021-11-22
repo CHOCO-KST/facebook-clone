@@ -1326,9 +1326,15 @@ body {
 
 .reaction-div {
   flex: 1;
+  height: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: var(--border-radius);
+}
+
+.reaction-div:hover {
+  background-color: var(--soft_dark);
 }
 
 .reaction-icon {
